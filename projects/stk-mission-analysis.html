@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cislunar mission analysis — Kéllia Umuhuza Gatete</title>
+  <meta name="description" content="Replicate a flown lunar mission in STK/Astrogator and ask an operational question of it — then spend three nights measuring the ISS by eye to find out whether orbital analysis predicts the sky above New Jersey.">
+  <meta property="og:title" content="Cislunar mission analysis — Kéllia Umuhuza Gatete">
+  <meta property="og:description" content="Replicate a flown lunar mission in STK/Astrogator and ask an operational question of it — then spend three nights measuring the ISS by eye to find out whether orbital analysis predicts the sky above New Jersey.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../home.css">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="rail" aria-hidden="true"><span class="rail__fill"></span></div>
+  <svg class="crease" viewBox="0 0 1200 14" preserveAspectRatio="none" aria-hidden="true">
+    <path class="crease__mtn" d="M0 10 L60 4 L120 10 L180 4 L240 10 L300 4 L360 10 L420 4 L480 10 L540 4 L600 10 L660 4 L720 10 L780 4 L840 10 L900 4 L960 10 L1020 4 L1080 10 L1140 4 L1200 10"/>
+    <path class="crease__val" d="M0 10 L1200 10"/>
+  </svg>
+  <header class="site-header">
+    <a class="wordmark" href="../index.html" aria-label="Home"><span>MAE</span><i></i> <span>ROB</span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-label="Toggle navigation"><span></span><span></span></button>
+    <nav class="nav" aria-label="Primary">
+      <a href="../index.html#work" aria-current="page">Work</a>
+      <a href="../about.html">About</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <a class="header-status" href="../index.html#contact"><span></span> Available for opportunities</a>
+  </header>
+  <main id="main">
+    <section class="project__head">
+      <div class="wrap">
+        <p class="eyebrow">MAE 341 Space Flight</p>
+        <h1 class="h-display project__title">Cislunar mission analysis</h1>
+        <p class="project__sub">Model an Artemis downlink, then go outside and check the model</p>
+        <p class="project__metaline">
+          <span>Fall 2025</span>
+          <span>Orbital mechanics · Link budgets · STK · Measurement</span>
+        </p>
+        <p class="marginalia">Three assignments that build on each other: ISS observation, an STK exercise set across orbital regimes, then an Artemis I replication extended with a downlink study. Prof. Edgar Choueiri.</p>
+      </div>
+    </section>
+    <div class="wrap"><svg class="crease" viewBox="0 0 1200 14" preserveAspectRatio="none" aria-hidden="true">
+    <path class="crease__mtn" d="M0 10 L60 4 L120 10 L180 4 L240 10 L300 4 L360 10 L420 4 L480 10 L540 4 L600 10 L660 4 L720 10 L780 4 L840 10 L900 4 L960 10 L1020 4 L1080 10 L1140 4 L1200 10"/>
+    <path class="crease__val" d="M0 10 L1200 10"/>
+  </svg></div>
+
+    <section class="wrap project__body">
+      <div>
+        <p class="project__summary">Replicate a flown lunar mission in STK/Astrogator and ask an operational question of it — then spend three nights measuring the ISS by eye to find out whether orbital analysis predicts the sky above New Jersey.</p>
+        <div class="block">
+          <h2 class="block__h">Modeling Artemis I</h2>
+          <div class="prose">
+            <p>One Astrogator Mission Control Sequence for Orion, blocked by flight phase instead of run as a single propagation — so every leg is debuggable on its own.</p>
+            <p>First guess establishes a feasible translunar departure, with B-plane targeting through the differential corrector and stops on encounter and lunar periapsis. Lunar orbit insertion moves propagation into the Moon-centred frame; Hohmann-style apsis-to-apsis transfers raise Orion from low lunar orbit into a distant retrograde orbit. Propagators matched to regime: Earth high-precision, cislunar, then lunar.</p>
+          </div>
+        </div>
+        <div class="block">
+          <h2 class="block__h">The downlink question</h2>
+          <div class="prose">
+            <p>Add an X-band transmitter on Orion and a receiver at Kennedy — and deliberately exclude the Deep Space Network, so the question becomes what one ground site can actually do.</p>
+            <p>Eighteen windows, 166.65 hours, 42.8% of the scenario. The spread matters more than the total: passes run from 7.45 minutes to just over 15 hours, so a scheduler can't assume a typical one. Worst-case geometry is ~440,000 km at low elevation, and Eb/No there is still about 19.75 dB.</p>
+            <p>So the link is access-limited, not power-limited — a scheduling problem, not an antenna problem. That converts straight into onboard requirements: storage sized to the worst gap, buffering, prioritized downlink. The same argument I'd later make from the other side on LUREX.</p>
+          </div>
+        </div>
+        <div class="block">
+          <h2 class="block__h">Checking it against the sky</h2>
+          <div class="prose">
+            <p>Three nights of ISS passes, cross-checked across two apps and a web ephemeris, reduced three ways. The angular method gave 93.334 ± 0.088 min against 92.903 min from mean motion — inside about 0.5%.</p>
+            <p>The third method, timing between successive rises, came out at 98.08 min: 5.6% high. That's the useful result. Repeat-pass timing is sensitive to viewing geometry and the horizon threshold, both of which stretch the interval. Knowing which method fails, and why, beats the one that happened to land close.</p>
+          </div>
+        </div>
+        <div class="block">
+          <h2 class="block__h">Secondary products</h2>
+          <div class="prose">
+            <p>The lighting report doubles as a geometry check: sparse shadows in cruise, then regular penumbra and umbra once Orion is cycling behind the Moon, clustering exactly where selenocentric radius is smallest.</p>
+            <p>SEET dose arrives almost entirely during Van Allen transit, then flattens — near 44 rad under the lightest shielding, a few rad under heavier. The trajectory isn't the driver here; the shielding assumption is. Worth knowing before quoting a dose number.</p>
+          </div>
+        </div>
+        <div class="block">
+          <h2 class="block__h">Where the model breaks</h2>
+          <div class="prose">
+            <p>The return leg is the honest failure. Orion wasn't captured by Earth's sphere of influence, so propagation ends December 2 instead of the actual December 11 splashdown. Outbound and lunar phases hold up; the corridor home doesn't.</p>
+            <p>The rest is idealized in flattering ways. Impulsive burns, so no finite-burn pointing or gravity losses. Free-space propagation and ideal pointing, which is why modeled BER sits at zero — a real budget with coding, atmospheric loss, and pointing error wouldn't.</p>
+            <p>Next pass: fix the return corridor and propagate through entry, add a ΔV-by-event timeline, and put a DSN access case beside the KSC-only one so the single-station conclusion has something to be measured against.</p>
+          </div>
+          <p class="note">Correction: an earlier write-up quoted the mean-motion period as 92.03 min. The correct value at 15.5 rev/day is 92.903 min. The ~0.5% agreement is unaffected.</p>
+        </div>
+      </div>
+      <aside class="spec" aria-label="Project specifications">
+        <div class="spec__head">Spec</div>
+          <div class="spec__row" style="--i:0">
+            <div class="spec__k">Software</div>
+            <div class="spec__v">Ansys STK / Astrogator</div>
+          </div>
+          <div class="spec__row" style="--i:1">
+            <div class="spec__k">Regimes modeled</div>
+            <div class="spec__v">LEO · MEO · GEO · HEO · cislunar</div>
+          </div>
+          <div class="spec__row" style="--i:2">
+            <div class="spec__k">Mission replicated</div>
+            <div class="spec__v">Artemis I, Nov–Dec 2022</div>
+          </div>
+          <div class="spec__row" style="--i:3">
+            <div class="spec__k">Downlink</div>
+            <div class="spec__v">X-band 8.425 GHz · QPSK · 200 kbps</div>
+          </div>
+          <div class="spec__row" style="--i:4">
+            <div class="spec__k">Tx / Rx</div>
+            <div class="spec__v">43 dBW EIRP · G/T 25 dB/K · 10° mask</div>
+          </div>
+          <div class="spec__row" style="--i:5">
+            <div class="spec__k">Contact windows</div>
+            <div class="spec__v">18, Kennedy Space Center</div>
+          </div>
+          <div class="spec__row" style="--i:6">
+            <div class="spec__k">Window duration</div>
+            <div class="spec__v">7.45 min – 15.04 h · 9.26 h mean</div>
+          </div>
+          <div class="spec__row" style="--i:7">
+            <div class="spec__k">Total contact</div>
+            <div class="spec__v">166.65 h — 42.8% of scenario</div>
+          </div>
+          <div class="spec__row" style="--i:8">
+            <div class="spec__k">Worst-case range</div>
+            <div class="spec__v">~440,000 km</div>
+          </div>
+          <div class="spec__row" style="--i:9">
+            <div class="spec__k">Worst-case Eb/No</div>
+            <div class="spec__v">~19.75 dB</div>
+          </div>
+          <div class="spec__row" style="--i:10">
+            <div class="spec__k">ISS period measured</div>
+            <div class="spec__v">93.334 ± 0.088 min</div>
+          </div>
+          <div class="spec__row" style="--i:11">
+            <div class="spec__k">Mean-motion reference</div>
+            <div class="spec__v">92.903 min at 15.5 rev/day</div>
+          </div>
+      </aside>
+    </section>
+
+    <section class="wrap media">
+      <p class="eyebrow">Documentation</p>
+      <div class="media__grid">
+          <figure class="reveal shot shot--0">
+            <div class="frame" data-media>
+              <img src="../assets/stk-mission-analysis/mcs-tree.png" alt="The Mission Control Sequence, blocked by flight phase rather than run as one propagation." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/stk-mission-analysis/mcs-tree.png</code></p>
+            </div>
+            <figcaption>The Mission Control Sequence, blocked by flight phase rather than run as one propagation.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--1">
+            <div class="frame" data-media>
+              <img src="../assets/stk-mission-analysis/trajectory-earth.png" alt="Earth-centred view: departure asymptote and B-plane targeting geometry." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/stk-mission-analysis/trajectory-earth.png</code></p>
+            </div>
+            <figcaption>Earth-centred view: departure asymptote and B-plane targeting geometry.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--2">
+            <div class="frame" data-media>
+              <img src="../assets/stk-mission-analysis/trajectory-moon.png" alt="Moon-centred view of lunar operations and the orbit-raising arcs toward DRO." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/stk-mission-analysis/trajectory-moon.png</code></p>
+            </div>
+            <figcaption>Moon-centred view of lunar operations and the orbit-raising arcs toward DRO.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--0">
+            <div class="frame" data-media>
+              <img src="../assets/stk-mission-analysis/radius-earth.png" alt="Geocentric radius — a climb to roughly 440,000 km, then lunar-distance operations." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/stk-mission-analysis/radius-earth.png</code></p>
+            </div>
+            <figcaption>Geocentric radius — a climb to roughly 440,000 km, then lunar-distance operations.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--1">
+            <div class="frame" data-media>
+              <img src="../assets/stk-mission-analysis/radius-moon.png" alt="Selenocentric radius falling to near zero at capture, then stepping up through the transfers." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/stk-mission-analysis/radius-moon.png</code></p>
+            </div>
+            <figcaption>Selenocentric radius falling to near zero at capture, then stepping up through the transfers.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--2">
+            <div class="frame" data-media>
+              <img src="../assets/stk-mission-analysis/lighting.png" alt="Lighting times. The eclipse clusters mark the low lunar orbit phase." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/stk-mission-analysis/lighting.png</code></p>
+            </div>
+            <figcaption>Lighting times. The eclipse clusters mark the low lunar orbit phase.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--0">
+            <div class="frame" data-media>
+              <img src="../assets/stk-mission-analysis/radiation-dose.png" alt="SEET accumulated dose under three shielding cases. Nearly all of it arrives during Van Allen transit." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/stk-mission-analysis/radiation-dose.png</code></p>
+            </div>
+            <figcaption>SEET accumulated dose under three shielding cases. Nearly all of it arrives during Van Allen transit.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--1">
+            <div class="frame" data-media>
+              <img src="../assets/stk-mission-analysis/comms-objects.png" alt="The comms extension: Downlink_Tx on Orion, Downlink_Rx at Kennedy." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/stk-mission-analysis/comms-objects.png</code></p>
+            </div>
+            <figcaption>The comms extension: Downlink_Tx on Orion, Downlink_Rx at Kennedy.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--2">
+            <div class="frame" data-media>
+              <img src="../assets/stk-mission-analysis/access-times.png" alt="Eighteen access windows across the scenario — roughly daily, and far from uniform." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/stk-mission-analysis/access-times.png</code></p>
+            </div>
+            <figcaption>Eighteen access windows across the scenario — roughly daily, and far from uniform.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--0">
+            <div class="frame" data-media>
+              <img src="../assets/stk-mission-analysis/access-durations.png" alt="Durations by window. The small wedge is the 7.45-minute pass; the largest runs 15.04 h." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/stk-mission-analysis/access-durations.png</code></p>
+            </div>
+            <figcaption>Durations by window. The small wedge is the 7.45-minute pass; the largest runs 15.04 h.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--1">
+            <div class="frame" data-media>
+              <img src="../assets/stk-mission-analysis/dwell-vs-gap.png" alt="Cumulative dwell against gap: 42.8% contact, 57.2% blackout, from one ground site." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/stk-mission-analysis/dwell-vs-gap.png</code></p>
+            </div>
+            <figcaption>Cumulative dwell against gap: 42.8% contact, 57.2% blackout, from one ground site.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--2">
+            <div class="frame" data-media>
+              <img src="../assets/stk-mission-analysis/aer.png" alt="Azimuth, elevation and range through access — the geometry that sizes the link." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/stk-mission-analysis/aer.png</code></p>
+            </div>
+            <figcaption>Azimuth, elevation and range through access — the geometry that sizes the link.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--0">
+            <div class="frame" data-media>
+              <img src="../assets/stk-mission-analysis/ebno.png" alt="Eb/No settling near 20 dB at lunar range. Access-limited, not power-limited." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/stk-mission-analysis/ebno.png</code></p>
+            </div>
+            <figcaption>Eb/No settling near 20 dB at lunar range. Access-limited, not power-limited.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--1">
+            <div class="frame" data-media>
+              <img src="../assets/stk-mission-analysis/orbit-regimes.png" alt="The exercise set: LEO, MEO, HEO and GEO with their ground tracks." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/stk-mission-analysis/orbit-regimes.png</code></p>
+            </div>
+            <figcaption>The exercise set: LEO, MEO, HEO and GEO with their ground tracks.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--2">
+            <div class="frame" data-media>
+              <img src="../assets/stk-mission-analysis/leo-decay.png" alt="LEO radius under HPOP with drag — decay accelerating as perigee drops into denser air." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/stk-mission-analysis/leo-decay.png</code></p>
+            </div>
+            <figcaption>LEO radius under HPOP with drag — decay accelerating as perigee drops into denser air.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--0">
+            <div class="frame" data-media>
+              <img src="../assets/stk-mission-analysis/heo-molniya.png" alt="Modified Molniya orbit; apsidal precession migrates the dwell region off high latitudes." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/stk-mission-analysis/heo-molniya.png</code></p>
+            </div>
+            <figcaption>Modified Molniya orbit; apsidal precession migrates the dwell region off high latitudes.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--1">
+            <div class="frame" data-media>
+              <img src="../assets/stk-mission-analysis/iss-elevation.png" alt="Observed ISS elevation across three days of passes — the raw material." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/stk-mission-analysis/iss-elevation.png</code></p>
+            </div>
+            <figcaption>Observed ISS elevation across three days of passes — the raw material.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--2">
+            <div class="frame" data-media>
+              <img src="../assets/stk-mission-analysis/iss-mean-anomaly.png" alt="Mean anomaly against time. Consistent slopes are what confirm a stable period." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/stk-mission-analysis/iss-mean-anomaly.png</code></p>
+            </div>
+            <figcaption>Mean anomaly against time. Consistent slopes are what confirm a stable period.</figcaption>
+          </figure>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <nav class="pager" aria-label="More projects">
+        <span><a href="railway.html">← Automated railway</a></span>
+        <span><a href="hydrogen-aircraft.html">Hydrogen-electric hybrid aircraft →</a></span>
+      </nav>
+    </div>
+
+  </main>
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <p class="footer__cta" id="contact">Currently looking for engineering roles.</p>
+        <div class="footer__links">
+          <a href="mailto:kg5133@alumni.princeton.edu">kg5133@alumni.princeton.edu</a>
+          <a href="tel:6093757945">(609) 375-7945</a>
+          <a href="../assets/docs/Kellia_Gatete_Mechanical_RnD_Resume.pdf">Résumé — mechanical / R&amp;D (PDF)</a>
+          <a href="../assets/docs/Kellia_Gatete_Space_Robotics_Resume.pdf">Résumé — space / robotics (PDF)</a>
+          <a href="https://github.com/kelliagatete" rel="me">GitHub</a>
+        </div>
+      </div>
+      <p class="colophon">Built and maintained by Kéllia Gatete · Princeton, NJ</p>
+    </div>
+  </footer>
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox__close" type="button" aria-label="Close">close</button>
+    <figure class="lightbox__stage"><img alt=""><figcaption></figcaption></figure>
+  </div>
+  <script src="../main.js"></script>
+</body>
+</html>

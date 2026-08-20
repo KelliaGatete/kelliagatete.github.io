@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Robotic additive manufacturing — Kéllia Umuhuza Gatete</title>
+  <meta name="description" content="Cement paste is a material you have to earn: too stiff and it clogs, too loose and it slumps. I printed a bio-inspired helical beam out of it, then loaded it to failure to find out whether the architecture was worth the trouble. It was — but not in the way the peak load suggests.">
+  <meta property="og:title" content="Robotic additive manufacturing — Kéllia Umuhuza Gatete">
+  <meta property="og:description" content="Cement paste is a material you have to earn: too stiff and it clogs, too loose and it slumps. I printed a bio-inspired helical beam out of it, then loaded it to failure to find out whether the architecture was worth the trouble. It was — but not in the way the peak load suggests.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../home.css">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="rail" aria-hidden="true"><span class="rail__fill"></span></div>
+  <svg class="crease" viewBox="0 0 1200 14" preserveAspectRatio="none" aria-hidden="true">
+    <path class="crease__mtn" d="M0 10 L60 4 L120 10 L180 4 L240 10 L300 4 L360 10 L420 4 L480 10 L540 4 L600 10 L660 4 L720 10 L780 4 L840 10 L900 4 L960 10 L1020 4 L1080 10 L1140 4 L1200 10"/>
+    <path class="crease__val" d="M0 10 L1200 10"/>
+  </svg>
+  <header class="site-header">
+    <a class="wordmark" href="../index.html" aria-label="Home"><span>MAE</span><i></i> <span>ROB</span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-label="Toggle navigation"><span></span><span></span></button>
+    <nav class="nav" aria-label="Primary">
+      <a href="../index.html#work" aria-current="page">Work</a>
+      <a href="../about.html">About</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <a class="header-status" href="../index.html#contact"><span></span> Available for opportunities</a>
+  </header>
+  <main id="main">
+    <section class="project__head">
+      <div class="wrap">
+        <p class="eyebrow">CEE 374 Autonomous Fabrication &amp; Robotics</p>
+        <h1 class="h-display project__title">Robotic additive manufacturing</h1>
+        <p class="project__sub">Print concrete in a helix, then break it on purpose</p>
+        <p class="project__metaline">
+          <span>Fall 2025</span>
+          <span>Robotics · Fabrication · Mechanical test · Materials</span>
+        </p>
+        <p class="marginalia">Group 3, assigned the Bouligand architecture. Prof. Reza Moini. Rheology, printing, and fracture testing across four labs; ABB arm programming alongside.</p>
+      </div>
+    </section>
+    <div class="wrap"><svg class="crease" viewBox="0 0 1200 14" preserveAspectRatio="none" aria-hidden="true">
+    <path class="crease__mtn" d="M0 10 L60 4 L120 10 L180 4 L240 10 L300 4 L360 10 L420 4 L480 10 L540 4 L600 10 L660 4 L720 10 L780 4 L840 10 L900 4 L960 10 L1020 4 L1080 10 L1140 4 L1200 10"/>
+    <path class="crease__val" d="M0 10 L1200 10"/>
+  </svg></div>
+
+    <section class="wrap project__body">
+      <div>
+        <p class="project__summary">Cement paste is a material you have to earn: too stiff and it clogs, too loose and it slumps. I printed a bio-inspired helical beam out of it, then loaded it to failure to find out whether the architecture was worth the trouble. It was — but not in the way the peak load suggests.</p>
+        <div class="block">
+          <h2 class="block__h">Getting the paste printable</h2>
+          <div class="prose">
+            <p>Before printing anything, we characterized three mixes on a rheometer. Static yield stress — what holds a layer up — came out at 258, 147, and 135 Pa; dynamic yield stress and viscosity, which govern whether it extrudes at all, ran the other way.</p>
+            <p>That trade is the whole problem. P1 had nearly twice the buildability (20.7 mm maximum layer height against 10.8 mm) and was the stiffest to push through a nozzle. I recommended P1 anyway: shape retention is harder to recover from than extrusion pressure.</p>
+          </div>
+        </div>
+        <div class="block">
+          <h2 class="block__h">Printing it</h2>
+          <div class="prose">
+            <p>Cement sifted to 150 µm, vacuum-mixed in two stages to pull the air out, loaded into a 90 ml syringe on a stepper-driven extruder. Two solid layers at the base for notching, then 21 layers rotating 9° each.</p>
+            <p>The helix fights you. Each rotation reduces the support the layer beneath offers, and the middle of the beam slumped. I raised extrusion to 102% at layer 14 and 103% at layer 19 to close the gaps opening up — which helped, and did not fix the air voids. That variability shows up later in the data, which is the honest link between process and property.</p>
+          </div>
+        </div>
+        <div class="block">
+          <h2 class="block__h">Breaking it</h2>
+          <div class="prose">
+            <p>Single-edge notch bending on an MTS Criterion, 69 mm span, displacement-controlled at 0.05 mm/min — slow enough that the crack has time to interact with the architecture rather than outrun it.</p>
+            <p>For crack initiation, cast wins: mean Kᴵᶜ of 260 kN/m^1.5 against 124 for honeycomb and 86 for Bouligand. Dense uniform material resists a crack starting. But energy-equivalent toughness inverts the order — Bouligand 915, honeycomb 891, cast 730 kN/m^1.5 — because the printed beams keep carrying load long after the peak.</p>
+            <p>Normalize by density and the printed beams pull further ahead: they are 25–30% lighter than cast. The fracture surfaces show why. The crack doesn't run straight through a Bouligand beam; it twists along the rotated filament interfaces, and every twist costs energy.</p>
+          </div>
+        </div>
+        <div class="block">
+          <h2 class="block__h">What it cost</h2>
+          <div class="prose">
+            <p>The Bouligand standard deviation is enormous — 267 against 62 for cast. Same design, same day, wildly different numbers, traced to filament width, voids, and interlayer bonding rather than to the architecture. Notch sharpness and roller seating add their own scatter.</p>
+            <p>So the finding is really two findings: the architecture works, and process control is what stands between the concept and a usable material.</p>
+          </div>
+        </div>
+        <div class="block">
+          <h2 class="block__h">Where the theory oversells</h2>
+          <div class="prose">
+            <p>Euler buckling puts a hollow cylinder at 241 printable layers and a thin wall at 81 about its weak axis. Set against the yielding limit of about 91 layers, the cylinder yields first and the wall buckles first — different failure modes for the same paste, decided by geometry.</p>
+            <p>But elastic buckling theory assumes ideal geometry and rate-independent behaviour, and the literature has it overestimating buildability by 104–210%. Running the thixotropy numbers makes that concrete: for yielding and buckling to arrive together you would print at 8.79 mm/min, against the 750 mm/min we actually used. The structural build-up rate cannot keep up. Worth knowing before quoting a limiting height from an equation.</p>
+          </div>
+        </div>
+        <div class="block">
+          <h2 class="block__h">The arm half of the course</h2>
+          <div class="prose">
+            <p>Alongside the cement work: ABB IRB1200 programming in RobotStudio and on the FlexPendant — RAPID motion, work objects, tool frames, gripper I/O, and the tests that matter operationally, like whether the arm resumes cleanly after an E-stop, or follows the path correctly after the fixture moves and the work object is redefined. It does.</p>
+            <p>My term paper proposed closing the loop between those two halves: keeping CAD-grade conformal path planning while a safety-bounded reinforcement-learning layer makes micro-adjustments to heading, lane spacing, and feed rate from multi-sensor feedback, with local replanning when deviation crosses a threshold. The gaps I was patching by hand at layer 14 are exactly what such a controller should catch.</p>
+          </div>
+        </div>
+      </div>
+      <aside class="spec" aria-label="Project specifications">
+        <div class="spec__head">Spec</div>
+          <div class="spec__row" style="--i:0">
+            <div class="spec__k">Architectures</div>
+            <div class="spec__v">Bouligand · honeycomb · cast control</div>
+          </div>
+          <div class="spec__row" style="--i:1">
+            <div class="spec__k">Beam</div>
+            <div class="spec__v">20 × 23 × 75 mm at 65% infill</div>
+          </div>
+          <div class="spec__row" style="--i:2">
+            <div class="spec__k">Bouligand rotation</div>
+            <div class="spec__v">9° per layer, 90° → 270°</div>
+          </div>
+          <div class="spec__row" style="--i:3">
+            <div class="spec__k">Filament</div>
+            <div class="spec__v">1.63 mm wide · 1.00 mm tall</div>
+          </div>
+          <div class="spec__row" style="--i:4">
+            <div class="spec__k">Mix</div>
+            <div class="spec__v">w/c 0.265 · HRWRA + VMA · vacuum mixed</div>
+          </div>
+          <div class="spec__row" style="--i:5">
+            <div class="spec__k">Print speed</div>
+            <div class="spec__v">750 mm/min deposition</div>
+          </div>
+          <div class="spec__row" style="--i:6">
+            <div class="spec__k">Cure</div>
+            <div class="spec__v">7 days at 95–99% RH</div>
+          </div>
+          <div class="spec__row" style="--i:7">
+            <div class="spec__k">Test</div>
+            <div class="spec__v">SENB, 69 mm span, 0.05 mm/min</div>
+          </div>
+          <div class="spec__row" style="--i:8">
+            <div class="spec__k">Robotics</div>
+            <div class="spec__v">ABB IRB1200 · RobotStudio · RAPID · FlexPendant</div>
+          </div>
+      </aside>
+    </section>
+
+    <section class="wrap media">
+      <p class="eyebrow">Documentation</p>
+      <div class="media__grid">
+          <figure class="reveal shot shot--0">
+            <div class="frame" data-media>
+              <img src="../assets/robotic-am/printing.jpg" alt="The Bouligand beam mid-print — syringe extrusion, no heat, cold-extrusion G-code." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/robotic-am/printing.jpg</code></p>
+            </div>
+            <figcaption>The Bouligand beam mid-print — syringe extrusion, no heat, cold-extrusion G-code.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--1">
+            <div class="frame" data-media>
+              <img src="../assets/robotic-am/slicing-preview.jpg" alt="Simplify3D preview of the layer being deposited, next to the machine running it." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/robotic-am/slicing-preview.jpg</code></p>
+            </div>
+            <figcaption>Simplify3D preview of the layer being deposited, next to the machine running it.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--2">
+            <div class="frame" data-media>
+              <img src="../assets/robotic-am/senb-setup.jpg" alt="Bouligand beam 2 in the MTS bend fixture, notch centred under the top roller." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/robotic-am/senb-setup.jpg</code></p>
+            </div>
+            <figcaption>Bouligand beam 2 in the MTS bend fixture, notch centred under the top roller.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--0">
+            <div class="frame" data-media>
+              <img src="../assets/robotic-am/fracture-surfaces.jpg" alt="After failure: the crack twisted along the rotated filament interfaces instead of running straight." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/robotic-am/fracture-surfaces.jpg</code></p>
+            </div>
+            <figcaption>After failure: the crack twisted along the rotated filament interfaces instead of running straight.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--1">
+            <div class="frame" data-media>
+              <img src="../assets/robotic-am/load-displacement.jpg" alt="Load–displacement for all six specimens. Cast peaks highest and drops instantly; printed beams keep carrying." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/robotic-am/load-displacement.jpg</code></p>
+            </div>
+            <figcaption>Load–displacement for all six specimens. Cast peaks highest and drops instantly; printed beams keep carrying.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--2">
+            <div class="frame" data-media>
+              <img src="../assets/robotic-am/toughness-bar.jpg" alt="Mean initiation and energy-equivalent toughness. The two metrics rank the architectures in opposite orders." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/robotic-am/toughness-bar.jpg</code></p>
+            </div>
+            <figcaption>Mean initiation and energy-equivalent toughness. The two metrics rank the architectures in opposite orders.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--0">
+            <div class="frame" data-media>
+              <img src="../assets/robotic-am/toughness-normalized.jpg" alt="Normalized by density — the printed beams gain ground, because they are lighter." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/robotic-am/toughness-normalized.jpg</code></p>
+            </div>
+            <figcaption>Normalized by density — the printed beams gain ground, because they are lighter.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--1">
+            <div class="frame" data-media>
+              <img src="../assets/robotic-am/rapid-code.jpg" alt="RAPID motion program and taught point coordinates on the FlexPendant." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/robotic-am/rapid-code.jpg</code></p>
+            </div>
+            <figcaption>RAPID motion program and taught point coordinates on the FlexPendant.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--2">
+            <div class="frame" data-media>
+              <img src="../assets/robotic-am/workobject-code.jpg" alt="Drawing on a redefined work object: move the fixture, redefine wobjPaper, path still holds." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/robotic-am/workobject-code.jpg</code></p>
+            </div>
+            <figcaption>Drawing on a redefined work object: move the fixture, redefine wobjPaper, path still holds.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--0">
+            <div class="frame" data-media>
+              <img src="../assets/robotic-am/abb-gripper.jpg" alt="IRB1200 in RobotStudio with the gripper attached, open." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/robotic-am/abb-gripper.jpg</code></p>
+            </div>
+            <figcaption>IRB1200 in RobotStudio with the gripper attached, open.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--1">
+            <div class="frame" data-media>
+              <img src="../assets/robotic-am/abb-pick.jpg" alt="Picking a part off the holder — gripper I/O and jogging from the pendant." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/robotic-am/abb-pick.jpg</code></p>
+            </div>
+            <figcaption>Picking a part off the holder — gripper I/O and jogging from the pendant.</figcaption>
+          </figure>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <nav class="pager" aria-label="More projects">
+        <span><a href="kanthagen.html">← KanthaGen</a></span>
+        <span><a href="plasma-carbon.html">Plasma carbon conversion →</a></span>
+      </nav>
+    </div>
+
+  </main>
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <p class="footer__cta" id="contact">Currently looking for engineering roles.</p>
+        <div class="footer__links">
+          <a href="mailto:kg5133@alumni.princeton.edu">kg5133@alumni.princeton.edu</a>
+          <a href="tel:6093757945">(609) 375-7945</a>
+          <a href="../assets/docs/Kellia_Gatete_Mechanical_RnD_Resume.pdf">Résumé — mechanical / R&amp;D (PDF)</a>
+          <a href="../assets/docs/Kellia_Gatete_Space_Robotics_Resume.pdf">Résumé — space / robotics (PDF)</a>
+          <a href="https://github.com/kelliagatete" rel="me">GitHub</a>
+        </div>
+      </div>
+      <p class="colophon">Built and maintained by Kéllia Gatete · Princeton, NJ</p>
+    </div>
+  </footer>
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox__close" type="button" aria-label="Close">close</button>
+    <figure class="lightbox__stage"><img alt=""><figcaption></figcaption></figure>
+  </div>
+  <script src="../main.js"></script>
+</body>
+</html>

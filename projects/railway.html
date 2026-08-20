@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Automated railway — Kéllia Umuhuza Gatete</title>
+  <meta name="description" content="The assignment was a controlled railway. The stretch goal — reloading, not just unloading — turned it into a sequencing problem, because the machine has to remember what it took off to put the right thing back.">
+  <meta property="og:title" content="Automated railway — Kéllia Umuhuza Gatete">
+  <meta property="og:description" content="The assignment was a controlled railway. The stretch goal — reloading, not just unloading — turned it into a sequencing problem, because the machine has to remember what it took off to put the right thing back.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../home.css">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="rail" aria-hidden="true"><span class="rail__fill"></span></div>
+  <svg class="crease" viewBox="0 0 1200 14" preserveAspectRatio="none" aria-hidden="true">
+    <path class="crease__mtn" d="M0 10 L60 4 L120 10 L180 4 L240 10 L300 4 L360 10 L420 4 L480 10 L540 4 L600 10 L660 4 L720 10 L780 4 L840 10 L900 4 L960 10 L1020 4 L1080 10 L1140 4 L1200 10"/>
+    <path class="crease__val" d="M0 10 L1200 10"/>
+  </svg>
+  <header class="site-header">
+    <a class="wordmark" href="../index.html" aria-label="Home"><span>MAE</span><i></i> <span>ROB</span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-label="Toggle navigation"><span></span><span></span></button>
+    <nav class="nav" aria-label="Primary">
+      <a href="../index.html#work" aria-current="page">Work</a>
+      <a href="../about.html">About</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <a class="header-status" href="../index.html#contact"><span></span> Available for opportunities</a>
+  </header>
+  <main id="main">
+    <section class="project__head">
+      <div class="wrap">
+        <p class="eyebrow">MAE 412 Microprocessors for Measurement &amp; Control</p>
+        <h1 class="h-display project__title">Automated railway</h1>
+        <p class="project__sub">A machine that unloads a train, sorts what it finds, and loads the next one</p>
+        <p class="project__metaline">
+          <span>Spring 2025</span>
+          <span>Mechatronics · Embedded · Sensing · 3D printing</span>
+        </p>
+        <p class="marginalia">Bench 8, with Maya Sessions and Susan Zhang. Prof. Michael Littman.</p>
+      </div>
+    </section>
+    <div class="wrap"><svg class="crease" viewBox="0 0 1200 14" preserveAspectRatio="none" aria-hidden="true">
+    <path class="crease__mtn" d="M0 10 L60 4 L120 10 L180 4 L240 10 L300 4 L360 10 L420 4 L480 10 L540 4 L600 10 L660 4 L720 10 L780 4 L840 10 L900 4 L960 10 L1020 4 L1080 10 L1140 4 L1200 10"/>
+    <path class="crease__val" d="M0 10 L1200 10"/>
+  </svg></div>
+
+    <section class="wrap project__body">
+      <div>
+        <p class="project__summary">The assignment was a controlled railway. The stretch goal — reloading, not just unloading — turned it into a sequencing problem, because the machine has to remember what it took off to put the right thing back.</p>
+        <div class="block">
+          <h2 class="block__h">Approach</h2>
+          <div class="prose">
+            <p>Hall-effect sensors produce position events; everything downstream is a state machine reacting to them. Sensor one throws the switches into the inner loop, sensor two kills track power for unloading, sensor three stops the train for reloading and sends the switches back to straight.</p>
+            <p>Sorting runs on coin-sorter geometry and a parity scheme rather than extra sensing — fewer parts, countable failure modes. Block control meant tolerating three trains on the board at once, with no magnets or markings to tell them apart.</p>
+          </div>
+        </div>
+        <div class="block">
+          <h2 class="block__h">What we built</h2>
+          <div class="prose">
+            <p>3D-printed unloading, sorting, and loading mechanisms; a modified trailer that tips to 60° along a curved cam as it passes a fixed structure; relay and trickle-charge daughterboards; the sequencing in assembly; and an ACIA serial link so a host can command the board mid-run.</p>
+          </div>
+        </div>
+        <div class="block">
+          <h2 class="block__h">Result</h2>
+          <div class="prose">
+            <p>Four balls across two sizes, handled hands-free: unloaded, sorted, reloaded, repeatably, in the class demonstration. For a mechanism with this many independent moving parts, repeatable is the actual test.</p>
+          </div>
+        </div>
+      </div>
+      <aside class="spec" aria-label="Project specifications">
+        <div class="spec__head">Spec</div>
+          <div class="spec__row" style="--i:0">
+            <div class="spec__k">Controller</div>
+            <div class="spec__v">ATmega328P on a vector board</div>
+          </div>
+          <div class="spec__row" style="--i:1">
+            <div class="spec__k">Sensing</div>
+            <div class="spec__v">3 × Hall effect</div>
+          </div>
+          <div class="spec__row" style="--i:2">
+            <div class="spec__k">Actuation</div>
+            <div class="spec__v">2 servos · 1 relay · 2 track switches</div>
+          </div>
+          <div class="spec__row" style="--i:3">
+            <div class="spec__k">Payload</div>
+            <div class="spec__v">4 steel balls, 5/16″ and ⅛″</div>
+          </div>
+          <div class="spec__row" style="--i:4">
+            <div class="spec__k">Comms</div>
+            <div class="spec__v">Arduino ↔ ACIA serial</div>
+          </div>
+          <div class="spec__row" style="--i:5">
+            <div class="spec__k">Logic</div>
+            <div class="spec__v">Assembly + GAL · Eagle CAD schematic</div>
+          </div>
+          <div class="spec__row" style="--i:6">
+            <div class="spec__k">Constraint</div>
+            <div class="spec__v">Block control, 3 trains concurrent</div>
+          </div>
+          <div class="spec__row" style="--i:7">
+            <div class="spec__k">Outcome</div>
+            <div class="spec__v">All objectives, plus the stretch goal</div>
+          </div>
+      </aside>
+    </section>
+
+    <section class="wrap media">
+      <p class="eyebrow">Documentation</p>
+      <div class="media__grid">
+          <figure class="reveal shot shot--0">
+            <div class="frame" data-media>
+              <img src="../assets/railway/board.jpg" alt="The full board: track, switches, sensors, loader, sorter." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/railway/board.jpg</code></p>
+            </div>
+            <figcaption>The full board: track, switches, sensors, loader, sorter.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--1">
+            <div class="frame" data-media>
+              <img src="../assets/railway/switch-servos.jpg" alt="Servo-actuated track switch and 3D-printed sorting chute." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/railway/switch-servos.jpg</code></p>
+            </div>
+            <figcaption>Servo-actuated track switch and 3D-printed sorting chute.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--2">
+            <div class="frame" data-media>
+              <img src="../assets/railway/wagon.jpg" alt="The wagon, mid-modification." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/railway/wagon.jpg</code></p>
+            </div>
+            <figcaption>The wagon, mid-modification.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--0">
+            <div class="frame" data-media>
+              <img src="../assets/railway/track-layout.png" alt="Track layout with switch and sensor placement." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/railway/track-layout.png</code></p>
+            </div>
+            <figcaption>Track layout with switch and sensor placement.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--1">
+            <div class="frame" data-media>
+              <img src="../assets/railway/schematic.png" alt="Vector board schematic — ATmega, ACIA, GAL, drivers." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/railway/schematic.png</code></p>
+            </div>
+            <figcaption>Vector board schematic — ATmega, ACIA, GAL, drivers.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--2">
+            <div class="frame" data-media>
+              <img src="../assets/railway/bench.jpg" alt="Bench 8, demonstration day." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/railway/bench.jpg</code></p>
+            </div>
+            <figcaption>Bench 8, demonstration day.</figcaption>
+          </figure>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <nav class="pager" aria-label="More projects">
+        <span><a href="lurex.html">← LUREX</a></span>
+        <span><a href="stk-mission-analysis.html">Cislunar mission analysis →</a></span>
+      </nav>
+    </div>
+
+  </main>
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <p class="footer__cta" id="contact">Currently looking for engineering roles.</p>
+        <div class="footer__links">
+          <a href="mailto:kg5133@alumni.princeton.edu">kg5133@alumni.princeton.edu</a>
+          <a href="tel:6093757945">(609) 375-7945</a>
+          <a href="../assets/docs/Kellia_Gatete_Mechanical_RnD_Resume.pdf">Résumé — mechanical / R&amp;D (PDF)</a>
+          <a href="../assets/docs/Kellia_Gatete_Space_Robotics_Resume.pdf">Résumé — space / robotics (PDF)</a>
+          <a href="https://github.com/kelliagatete" rel="me">GitHub</a>
+        </div>
+      </div>
+      <p class="colophon">Built and maintained by Kéllia Gatete · Princeton, NJ</p>
+    </div>
+  </footer>
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox__close" type="button" aria-label="Close">close</button>
+    <figure class="lightbox__stage"><img alt=""><figcaption></figcaption></figure>
+  </div>
+  <script src="../main.js"></script>
+</body>
+</html>

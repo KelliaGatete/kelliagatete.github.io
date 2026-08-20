@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MARSKIN — Kéllia Umuhuza Gatete</title>
+  <meta name="description" content="OSCAR folds down to fit through gaps — which is exactly what makes it hard to protect. MARSKIN is the six-layer skin that insulates, sheds dust, resists abrasion, and still bends at the creases, plus the campaign that found where it works and where it doesn't.">
+  <meta property="og:title" content="MARSKIN — Kéllia Umuhuza Gatete">
+  <meta property="og:description" content="OSCAR folds down to fit through gaps — which is exactly what makes it hard to protect. MARSKIN is the six-layer skin that insulates, sheds dust, resists abrasion, and still bends at the creases, plus the campaign that found where it works and where it doesn't.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../home.css">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="rail" aria-hidden="true"><span class="rail__fill"></span></div>
+  <svg class="crease" viewBox="0 0 1200 14" preserveAspectRatio="none" aria-hidden="true">
+    <path class="crease__mtn" d="M0 10 L60 4 L120 10 L180 4 L240 10 L300 4 L360 10 L420 4 L480 10 L540 4 L600 10 L660 4 L720 10 L780 4 L840 10 L900 4 L960 10 L1020 4 L1080 10 L1140 4 L1200 10"/>
+    <path class="crease__val" d="M0 10 L1200 10"/>
+  </svg>
+  <header class="site-header">
+    <a class="wordmark" href="../index.html" aria-label="Home"><span>MAE</span><i></i> <span>ROB</span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-label="Toggle navigation"><span></span><span></span></button>
+    <nav class="nav" aria-label="Primary">
+      <a href="../index.html#work" aria-current="page">Work</a>
+      <a href="../about.html">About</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <a class="header-status" href="../index.html#contact"><span></span> Available for opportunities</a>
+  </header>
+  <main id="main">
+    <section class="project__head">
+      <div class="wrap">
+        <p class="eyebrow">Senior thesis · Princeton MAE</p>
+        <h1 class="h-display project__title">MARSKIN</h1>
+        <p class="project__sub">Six layers of armour for a robot that has to keep folding</p>
+        <p class="project__metaline">
+          <span>Sep 2025 – May 2026</span>
+          <span>Soft robotics · Thermal test · Materials · Fabrication</span>
+        </p>
+        <p class="marginalia">Co-authored with Susan Zhang '26. Advisor: Prof. Andrej Košmrlj. Reader: Prof. Mikko Haataja.</p>
+      </div>
+    </section>
+    <div class="wrap"><svg class="crease" viewBox="0 0 1200 14" preserveAspectRatio="none" aria-hidden="true">
+    <path class="crease__mtn" d="M0 10 L60 4 L120 10 L180 4 L240 10 L300 4 L360 10 L420 4 L480 10 L540 4 L600 10 L660 4 L720 10 L780 4 L840 10 L900 4 L960 10 L1020 4 L1080 10 L1140 4 L1200 10"/>
+    <path class="crease__val" d="M0 10 L1200 10"/>
+  </svg></div>
+
+    <section class="wrap project__body">
+      <div>
+        <p class="project__summary">OSCAR folds down to fit through gaps — which is exactly what makes it hard to protect. MARSKIN is the six-layer skin that insulates, sheds dust, resists abrasion, and still bends at the creases, plus the campaign that found where it works and where it doesn't.</p>
+        <div class="block">
+          <h2 class="block__h">The problem</h2>
+          <div class="prose">
+            <p>OSCAR's whole value proposition is that it collapses. A rigid enclosure would protect it beautifully and defeat the point. The skin had to survive Mars-like thermal and abrasive conditions, tolerate repeated folding at the creases, and be buildable by two undergraduates in a university lab.</p>
+          </div>
+        </div>
+        <div class="block">
+          <h2 class="block__h">Approach</h2>
+          <div class="prose">
+            <p>A layup, not a material. Each layer does one job: TPU and EcoFlex for compliance and a bondable base, aerogel for insulation, PETG-PTFE and aluminium for radiant load and durability, superhydrophobic coating for dust.</p>
+            <p>Circular test articles first — fast to make, easy to instrument, directly comparable against controls. Once the layup settled, an OSCAR-specific panelized geometry that puts seams away from the fold lines.</p>
+          </div>
+        </div>
+        <div class="block">
+          <h2 class="block__h">What I built</h2>
+          <div class="prose">
+            <p>The layup and the fixturing to reproduce it. The onboard sensing — a Pi Zero 2 W syncing a contact TMP117 and non-contact MLX90614 at 1 Hz with 1080p day/night stills every 10 s. And the rigs, so MARSKIN and both controls saw identical conditions every run.</p>
+          </div>
+        </div>
+        <div class="block">
+          <h2 class="block__h">What the data said</h2>
+          <div class="prose">
+            <p>Under the heat lamp it isn't subtle. At 19.8 cm the full stack held a peak through-thickness ΔT of 26.5 °C against 4.6 °C for the better control. Across all three standoffs: ~595% higher peak ΔT, ~650% higher mean.</p>
+            <p>Conduction was more interesting. At 75 °C the stack led clearly — 23.7 °C peak against 12.8 °C for the better control. At 50 °C the two came in 0.9 °C apart, 4.5 against 5.4 °C, and I don't report that as a result. That was one of the first runs, before the protocol had settled: we were moving the same sensors between test articles rather than instrumenting each one independently, so placement and contact varied from run to run, and the rig was still a bench setup rather than a controlled environment. A 0.9 °C margin is smaller than that arrangement could resolve. It needs repeating before anything is claimed from it in either direction. What the conductive data does support is the mechanism — the aerogel earns its place once the gradient is steep enough, and 75 °C is steep enough.</p>
+            <p>Three hot–cold cycles with response intact, no visible delamination, still foldable — which was the constraint that made the problem worth doing.</p>
+          </div>
+          <p class="note">Percentages compare against the best-performing control at each condition. Absolute values are the honest version, and both are plotted below. The 50 °C plate run is excluded from every percentage claim here, for the reason above.</p>
+        </div>
+        <div class="block">
+          <h2 class="block__h">What I'd do differently</h2>
+          <div class="prose">
+            <p>The real limitation is the environment, not the skin. Everything here was measured in a lab: room air, room pressure, a heat lamp standing in for solar flux. Mars is 6 mbar of CO₂, −60 °C on average, and abrasive dust driven by wind. A thermal-vacuum chamber with a CO₂ atmosphere and regolith simulant would tell you whether the layup actually holds, and nothing short of that moves this past a low TRL.</p>
+            <p>The test methods need the same tightening: more replicates, controlled emissivity, calibrated flux instead of lamp distance, and a defined cycling protocol — enough statistical power to state a result with error bars rather than a single comparison per condition.</p>
+            <p>Two specifics I'd chase inside that: a clean re-run of the conductive case with dedicated sensors per article and controlled contact, swept between 50 and 75 °C so the gradient dependence becomes a design rule instead of two disconnected points; and fold endurance — three cycles proves nothing, dozens would start to.</p>
+          </div>
+        </div>
+      </div>
+      <aside class="spec" aria-label="Project specifications">
+        <div class="spec__head">Spec</div>
+          <div class="spec__row" style="--i:0">
+            <div class="spec__k">Layers</div>
+            <div class="spec__v">6 — TPU, EcoFlex, aerogel, PETG-PTFE, aluminium, coating</div>
+          </div>
+          <div class="spec__row" style="--i:1">
+            <div class="spec__k">Controls</div>
+            <div class="spec__v">TPU-only · TPU + EcoFlex</div>
+          </div>
+          <div class="spec__row" style="--i:2">
+            <div class="spec__k">Heat lamp</div>
+            <div class="spec__v">3 standoffs — 22.3, 19.8, 17.4 cm</div>
+          </div>
+          <div class="spec__row" style="--i:3">
+            <div class="spec__k">Heat plate</div>
+            <div class="spec__v">50 °C and 75 °C</div>
+          </div>
+          <div class="spec__row" style="--i:4">
+            <div class="spec__k">Cold soak</div>
+            <div class="spec__v">30 min</div>
+          </div>
+          <div class="spec__row" style="--i:5">
+            <div class="spec__k">Thermal cycles</div>
+            <div class="spec__v">3 hot–cold</div>
+          </div>
+          <div class="spec__row" style="--i:6">
+            <div class="spec__k">Sensing</div>
+            <div class="spec__v">Raspberry Pi Zero 2 W · TMP117 · MLX90614</div>
+          </div>
+          <div class="spec__row" style="--i:7">
+            <div class="spec__k">Sample rate</div>
+            <div class="spec__v">1 Hz thermal · 0.1 Hz imaging</div>
+          </div>
+      </aside>
+    </section>
+
+    <section class="wrap media">
+      <p class="eyebrow">Documentation</p>
+      <div class="media__grid">
+          <figure class="reveal shot shot--0">
+            <div class="frame" data-media>
+              <img src="../assets/marskin/instrumented.jpg" alt="Instrumented test article, reading through the stack." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/marskin/instrumented.jpg</code></p>
+            </div>
+            <figcaption>Instrumented test article, reading through the stack.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--1">
+            <div class="frame" data-media>
+              <img src="../assets/marskin/layers.jpg" alt="Cross-section: PTFE films, low-infill TPU, AS40 silicone, aluminium, insulator, polyurethane adhesive." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/marskin/layers.jpg</code></p>
+            </div>
+            <figcaption>Cross-section: PTFE films, low-infill TPU, AS40 silicone, aluminium, insulator, polyurethane adhesive.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--2">
+            <div class="frame" data-media>
+              <img src="../assets/marskin/skin-structure.jpg" alt="Panelized skin on rectangular OSCAR, with per-face layer structure." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/marskin/skin-structure.jpg</code></p>
+            </div>
+            <figcaption>Panelized skin on rectangular OSCAR, with per-face layer structure.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--0">
+            <div class="frame" data-media>
+              <img src="../assets/marskin/panel-folded.jpg" alt="A panel with its creases — seams placed away from the hinge lines." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/marskin/panel-folded.jpg</code></p>
+            </div>
+            <figcaption>A panel with its creases — seams placed away from the hinge lines.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--1">
+            <div class="frame" data-media>
+              <img src="../assets/marskin/oscar-cad.jpg" alt="OSCAR: Kresling towers, ratcheting feet, servo drive." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/marskin/oscar-cad.jpg</code></p>
+            </div>
+            <figcaption>OSCAR: Kresling towers, ratcheting feet, servo drive.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--2">
+            <div class="frame" data-media>
+              <img src="../assets/marskin/fabrication.jpg" alt="Curing under clamps. A great deal of the thesis looked like this." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/marskin/fabrication.jpg</code></p>
+            </div>
+            <figcaption>Curing under clamps. A great deal of the thesis looked like this.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--0">
+            <div class="frame" data-media>
+              <img src="../assets/marskin/heat-flow.jpg" alt="Conduction and radiation model through the rectangular skin." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/marskin/heat-flow.jpg</code></p>
+            </div>
+            <figcaption>Conduction and radiation model through the rectangular skin.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--1">
+            <div class="frame" data-media>
+              <img src="../assets/marskin/test-setups.jpg" alt="The test matrix: heat plate, lamp at three standoffs, cold soak, abrasion." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/marskin/test-setups.jpg</code></p>
+            </div>
+            <figcaption>The test matrix: heat plate, lamp at three standoffs, cold soak, abrasion.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--2">
+            <div class="frame" data-media>
+              <img src="../assets/marskin/chart-lamp-max.png" alt="Heat lamp, peak |ΔT| — full stack against both controls." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/marskin/chart-lamp-max.png</code></p>
+            </div>
+            <figcaption>Heat lamp, peak |ΔT| — full stack against both controls.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--0">
+            <div class="frame" data-media>
+              <img src="../assets/marskin/chart-lamp-mean.png" alt="Heat lamp, mean ΔT across the exposure window." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/marskin/chart-lamp-mean.png</code></p>
+            </div>
+            <figcaption>Heat lamp, mean ΔT across the exposure window.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--1">
+            <div class="frame" data-media>
+              <img src="../assets/marskin/chart-plate-max.png" alt="Heat plate, peak |ΔT|. The 50 °C pair sits inside the fixture's resolution — see the note above." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/marskin/chart-plate-max.png</code></p>
+            </div>
+            <figcaption>Heat plate, peak |ΔT|. The 50 °C pair sits inside the fixture's resolution — see the note above.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--2">
+            <div class="frame" data-media>
+              <img src="../assets/marskin/chart-plate-mean.png" alt="Heat plate, mean ΔT. Same condition, same caveat." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/marskin/chart-plate-mean.png</code></p>
+            </div>
+            <figcaption>Heat plate, mean ΔT. Same condition, same caveat.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--0">
+            <div class="frame" data-media>
+              <img src="../assets/marskin/chart-lamp-outer.png" alt="Outer-surface peak temperature — running hotter outside is the mechanism working." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/marskin/chart-lamp-outer.png</code></p>
+            </div>
+            <figcaption>Outer-surface peak temperature — running hotter outside is the mechanism working.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--1">
+            <div class="frame" data-media>
+              <img src="../assets/marskin/dust-chamber.jpg" alt="Dust chamber, all three stacks exposed together." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/marskin/dust-chamber.jpg</code></p>
+            </div>
+            <figcaption>Dust chamber, all three stacks exposed together.</figcaption>
+          </figure>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <nav class="pager" aria-label="More projects">
+        <span><a href="../index.html#work">← All work</a></span>
+        <span><a href="lurex.html">LUREX →</a></span>
+      </nav>
+    </div>
+
+  </main>
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <p class="footer__cta" id="contact">Currently looking for engineering roles.</p>
+        <div class="footer__links">
+          <a href="mailto:kg5133@alumni.princeton.edu">kg5133@alumni.princeton.edu</a>
+          <a href="tel:6093757945">(609) 375-7945</a>
+          <a href="../assets/docs/Kellia_Gatete_Mechanical_RnD_Resume.pdf">Résumé — mechanical / R&amp;D (PDF)</a>
+          <a href="../assets/docs/Kellia_Gatete_Space_Robotics_Resume.pdf">Résumé — space / robotics (PDF)</a>
+          <a href="https://github.com/kelliagatete" rel="me">GitHub</a>
+        </div>
+      </div>
+      <p class="colophon">Built and maintained by Kéllia Gatete · Princeton, NJ</p>
+    </div>
+  </footer>
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox__close" type="button" aria-label="Close">close</button>
+    <figure class="lightbox__stage"><img alt=""><figcaption></figcaption></figure>
+  </div>
+  <script src="../main.js"></script>
+</body>
+</html>

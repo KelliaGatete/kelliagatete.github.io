@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KanthaGen — Kéllia Umuhuza Gatete</title>
+  <meta name="description" content="A browser tool that turns a hand-drawn region into an editable Nakshi Kantha composition, built on a curated archive of real motifs rather than invented ornament.">
+  <meta property="og:title" content="KanthaGen — Kéllia Umuhuza Gatete">
+  <meta property="og:description" content="A browser tool that turns a hand-drawn region into an editable Nakshi Kantha composition, built on a curated archive of real motifs rather than invented ornament.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../home.css">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="rail" aria-hidden="true"><span class="rail__fill"></span></div>
+  <svg class="crease" viewBox="0 0 1200 14" preserveAspectRatio="none" aria-hidden="true">
+    <path class="crease__mtn" d="M0 10 L60 4 L120 10 L180 4 L240 10 L300 4 L360 10 L420 4 L480 10 L540 4 L600 10 L660 4 L720 10 L780 4 L840 10 L900 4 L960 10 L1020 4 L1080 10 L1140 4 L1200 10"/>
+    <path class="crease__val" d="M0 10 L1200 10"/>
+  </svg>
+  <header class="site-header">
+    <a class="wordmark" href="../index.html" aria-label="Home"><span>MAE</span><i></i> <span>ROB</span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-label="Toggle navigation"><span></span><span></span></button>
+    <nav class="nav" aria-label="Primary">
+      <a href="../index.html#work" aria-current="page">Work</a>
+      <a href="../about.html">About</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <a class="header-status" href="../index.html#contact"><span></span> Available for opportunities</a>
+  </header>
+  <main id="main">
+    <section class="project__head">
+      <div class="wrap">
+        <p class="eyebrow">ARC 374 Computational Thinking for Design</p>
+        <h1 class="h-display project__title">KanthaGen</h1>
+        <p class="project__sub">A drawing tool that composes inside a tradition instead of approximating it</p>
+        <p class="project__metaline">
+          <span>Spring 2026</span>
+          <span>Computational design · JavaScript · SVG · Testing</span>
+        </p>
+        <p class="marginalia">With Elinald Desroches and Saba Maheen. The tool below is the real thing — it runs in your browser.</p>
+      </div>
+    </section>
+    <div class="wrap"><svg class="crease" viewBox="0 0 1200 14" preserveAspectRatio="none" aria-hidden="true">
+    <path class="crease__mtn" d="M0 10 L60 4 L120 10 L180 4 L240 10 L300 4 L360 10 L420 4 L480 10 L540 4 L600 10 L660 4 L720 10 L780 4 L840 10 L900 4 L960 10 L1020 4 L1080 10 L1140 4 L1200 10"/>
+    <path class="crease__val" d="M0 10 L1200 10"/>
+  </svg></div>
+
+    <section class="wrap project__body">
+      <div>
+        <p class="project__summary">A browser tool that turns a hand-drawn region into an editable Nakshi Kantha composition, built on a curated archive of real motifs rather than invented ornament.</p>
+        <p class="project__links"><a class="btn" href="../demo/kanthagen/index.html">Try KanthaGen →</a></p>
+        <div class="block">
+          <h2 class="block__h">Approach</h2>
+          <div class="prose">
+            <p>Generative ornament is easy to make arbitrary. So the archive came first: 107 images of motifs, borders, and stitch types, catalogued, with every procedural variant built out of that documented vocabulary. The tool composes within a tradition rather than gesturing at its surface.</p>
+          </div>
+        </div>
+        <div class="block">
+          <h2 class="block__h">What I built</h2>
+          <div class="prose">
+            <p>Region drawing across four input types, 15 procedural motif variants, grouping and radial symmetry, layers, undo/redo, alignment and distribution, print-ready export. Plus a parameterized Hive Hotel generator that reports room count, footprint, open and green area, and density — so generated layouts can be compared, not just admired.</p>
+          </div>
+        </div>
+        <div class="block">
+          <h2 class="block__h">Testing</h2>
+          <div class="prose">
+            <p>52 unit tests across 11 suites, against the geometry utilities, state management, and UI gating.</p>
+            <p>Radial-symmetry duplication was the hard one: rotation about a canvas centroid, where floating-point drift forces tolerance-based assertions instead of equality. Undo/redo needed its own care, since history snapshots go through JSON serialization — state immutability is an assumption worth testing rather than trusting. The edge cases held the useful findings: a degenerate single-point polygon falls back to a stitch radius of 50, and zero-length line normalization is what stops a divide-by-zero.</p>
+          </div>
+        </div>
+        <div class="block">
+          <h2 class="block__h">What users found</h2>
+          <div class="prose">
+            <p>Four people, no instructions. Drawing and motif generation landed. Export did not — one user couldn't find the download and screenshotted the canvas instead, losing quality. Another never discovered resize. A third fought the double-click on the freehand boundary.</p>
+            <p>Both feature requests were about range, not bugs: a colour picker scoped to one motif or several, and an example library showing what a finished composition looks like. Discoverability was the finding, and that's a design problem.</p>
+          </div>
+        </div>
+        <div class="block">
+          <h2 class="block__h">What I'd do differently</h2>
+          <div class="prose">
+            <p>We started with a VLLM generating motifs from annotated references. Getting from annotations to images the interface could actually consume didn't come together, so we moved to procedural SVG — a deliberate trade of novelty for control and crispness.</p>
+            <p>The next version revives that pipeline properly: generate from annotated references, vectorize to editable SVG, feed it into the same interface. Then direct SVG/PDF export, adjustable stitch parameters, and coverage and repetition metrics so a composition can be measured.</p>
+          </div>
+        </div>
+      </div>
+      <aside class="spec" aria-label="Project specifications">
+        <div class="spec__head">Spec</div>
+          <div class="spec__row" style="--i:0">
+            <div class="spec__k">Stack</div>
+            <div class="spec__v">HTML · CSS · JavaScript · SVG/Canvas</div>
+          </div>
+          <div class="spec__row" style="--i:1">
+            <div class="spec__k">Canvas formats</div>
+            <div class="spec__v">3 — pillow 1:1, runner 1:5, tapestry 4:5</div>
+          </div>
+          <div class="spec__row" style="--i:2">
+            <div class="spec__k">Region types</div>
+            <div class="spec__v">4 — polygon, circle, rectangle, freehand</div>
+          </div>
+          <div class="spec__row" style="--i:3">
+            <div class="spec__k">Motif categories</div>
+            <div class="spec__v">5 — human, decorative, animal, running stitch, floral</div>
+          </div>
+          <div class="spec__row" style="--i:4">
+            <div class="spec__k">Motif variants</div>
+            <div class="spec__v">15, procedural</div>
+          </div>
+          <div class="spec__row" style="--i:5">
+            <div class="spec__k">Archive curated</div>
+            <div class="spec__v">107 images</div>
+          </div>
+          <div class="spec__row" style="--i:6">
+            <div class="spec__k">Unit tests</div>
+            <div class="spec__v">52 across 11 suites</div>
+          </div>
+          <div class="spec__row" style="--i:7">
+            <div class="spec__k">User evaluation</div>
+            <div class="spec__v">4 users, unmoderated</div>
+          </div>
+      </aside>
+    </section>
+
+    <section class="wrap media">
+      <p class="eyebrow">Documentation</p>
+      <div class="media__grid">
+          <figure class="reveal shot shot--0">
+            <div class="frame" data-media>
+              <video controls preload="metadata" poster="../assets/kanthagen/demo-poster.jpg">
+              <source src="../assets/kanthagen/demo.mp4" type="video/mp4">
+            </video>
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/kanthagen/demo.mp4</code></p>
+            </div>
+            <figcaption>The tool in use: draw a region, generate motifs, compose, export.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--1">
+            <div class="frame" data-media>
+              <img src="../assets/kanthagen/ui-composition.png" alt="The interface with a composition in progress." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/kanthagen/ui-composition.png</code></p>
+            </div>
+            <figcaption>The interface with a composition in progress.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--2">
+            <div class="frame" data-media>
+              <img src="../assets/kanthagen/motif-categories.png" alt="Generated motifs per category — human, decorative, animal, running stitch, floral." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/kanthagen/motif-categories.png</code></p>
+            </div>
+            <figcaption>Generated motifs per category — human, decorative, animal, running stitch, floral.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--0">
+            <div class="frame" data-media>
+              <img src="../assets/kanthagen/landing.png" alt="Landing page." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/kanthagen/landing.png</code></p>
+            </div>
+            <figcaption>Landing page.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--1">
+            <div class="frame" data-media>
+              <img src="../assets/kanthagen/info-page.png" alt="The info page: nakshi kantha, stitch types, motif vocabulary." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/kanthagen/info-page.png</code></p>
+            </div>
+            <figcaption>The info page: nakshi kantha, stitch types, motif vocabulary.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--2">
+            <div class="frame" data-media>
+              <img src="../assets/kanthagen/pillow-mandala.png" alt="1:1 pillow — radially symmetric layout using each motif type in a mandala." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/kanthagen/pillow-mandala.png</code></p>
+            </div>
+            <figcaption>1:1 pillow — radially symmetric layout using each motif type in a mandala.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--0">
+            <div class="frame" data-media>
+              <img src="../assets/kanthagen/runner-freehand.png" alt="1:5 runner — freehand pen tool for hearts, combined with provided decorative motifs." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/kanthagen/runner-freehand.png</code></p>
+            </div>
+            <figcaption>1:5 runner — freehand pen tool for hearts, combined with provided decorative motifs.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--1">
+            <div class="frame" data-media>
+              <img src="../assets/kanthagen/tapestry-lotus.png" alt="4:5 tapestry — a floral lotus with a smiling human motif, built with the symmetry tools." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/kanthagen/tapestry-lotus.png</code></p>
+            </div>
+            <figcaption>4:5 tapestry — a floral lotus with a smiling human motif, built with the symmetry tools.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--2">
+            <div class="frame" data-media>
+              <img src="../assets/kanthagen/tapestry-border.png" alt="4:5 tapestry — large central motif, smaller motifs around it, triple-layered running stitch border." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/kanthagen/tapestry-border.png</code></p>
+            </div>
+            <figcaption>4:5 tapestry — large central motif, smaller motifs around it, triple-layered running stitch border.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--0">
+            <div class="frame" data-media>
+              <img src="../assets/kanthagen/poster.png" alt="Final project poster." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/kanthagen/poster.png</code></p>
+            </div>
+            <figcaption>Final project poster.</figcaption>
+          </figure>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <nav class="pager" aria-label="More projects">
+        <span><a href="hydrogen-aircraft.html">← Hydrogen-electric hybrid aircraft</a></span>
+        <span><a href="robotic-am.html">Robotic additive manufacturing →</a></span>
+      </nav>
+    </div>
+
+  </main>
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <p class="footer__cta" id="contact">Currently looking for engineering roles.</p>
+        <div class="footer__links">
+          <a href="mailto:kg5133@alumni.princeton.edu">kg5133@alumni.princeton.edu</a>
+          <a href="tel:6093757945">(609) 375-7945</a>
+          <a href="../assets/docs/Kellia_Gatete_Mechanical_RnD_Resume.pdf">Résumé — mechanical / R&amp;D (PDF)</a>
+          <a href="../assets/docs/Kellia_Gatete_Space_Robotics_Resume.pdf">Résumé — space / robotics (PDF)</a>
+          <a href="https://github.com/kelliagatete" rel="me">GitHub</a>
+        </div>
+      </div>
+      <p class="colophon">Built and maintained by Kéllia Gatete · Princeton, NJ</p>
+    </div>
+  </footer>
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox__close" type="button" aria-label="Close">close</button>
+    <figure class="lightbox__stage"><img alt=""><figcaption></figcaption></figure>
+  </div>
+  <script src="../main.js"></script>
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kéllia Umuhuza Gatete — Princeton mechanical and aerospace engineer. Planetary robotics, thermal and mechanical test, spacecraft systems.">
+  <meta name="theme-color" content="#f1eddf">
+  <title>Kéllia Umuhuza Gatete — Robotics, Flight &amp; Mechanisms</title>
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+<main>
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Back to top"><span>MAE</span><i></i> <span>ROB</span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-label="Toggle navigation"><span></span><span></span></button>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="header-status" href="#contact"><span></span> Available for opportunities</a>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="hero__eyebrow hero-load">Princeton University · B.S.E. Mechanical &amp; Aerospace Engineering · 2026</div>
+    <div class="hero__grid">
+      <div class="hero__title hero-load"><h1>I build things<br>that have to <em>survive</em><br>somewhere difficult.</h1></div>
+      <div class="hero__orbital hero-load" aria-hidden="true">
+        <svg class="fold" viewBox="0 0 260 260" role="img">
+          <g class="fold__flux">
+            <path d="M46 26v22M78 20v28M110 26v22M142 20v28M174 26v22M206 20v28"/>
+          </g>
+          <g class="fold__stack">
+            <path class="fold__crease" d="M40 78l38-22 38 22 38-22 38 22 38-22"/>
+            <path class="fold__crease" d="M40 108l38-22 38 22 38-22 38 22 38-22"/>
+            <path class="fold__crease" d="M40 138l38-22 38 22 38-22 38 22 38-22"/>
+            <path class="fold__crease" d="M40 168l38-22 38 22 38-22 38 22 38-22"/>
+            <path class="fold__crease" d="M40 198l38-22 38 22 38-22 38 22 38-22"/>
+            <path class="fold__crease" d="M40 228l38-22 38 22 38-22 38 22 38-22"/>
+          </g>
+          <g class="fold__gauge">
+            <path d="M232 62v168"/>
+            <path d="M226 62h12M226 230h12"/>
+          </g>
+        </svg>
+        <span class="orbital-note">SIX LAYERS<br>ONE FOLD<br>26.5 °C</span>
+      </div>
+      <div class="hero__intro hero-load">
+        <p>I build things that have to survive somewhere difficult, then test them until the data says whether they do.</p>
+        <a class="text-link" href="#work">Explore selected work <svg aria-hidden="true" class="arrow arrow--down" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M14 7l5 5-5 5" stroke="currentColor" stroke-width="1.7"/></svg></a>
+      </div>
+    </div>
+    <div class="hero__meta hero-load">
+      <span>Princeton, NJ</span>
+      <span>40.343° N / 74.651° W</span>
+      <span>Portfolio / 2026</span>
+    </div>
+  </section>
+
+  <section class="work-section" id="work">
+    <div class="section-heading reveal">
+      <span class="section-index">01 / Selected work</span>
+      <h2>From first prototype<br>to <em>data that settles it.</em></h2>
+      <p>Nine projects across planetary robotics, spacecraft systems, fabrication and test. Every page says what worked, what didn't, and what I'd do differently.</p>
+    </div>
+    <div class="filters reveal" aria-label="Filter projects by discipline"><button class="filter filter--active" data-filter="all">All</button><button class="filter" data-filter="space">Space</button><button class="filter" data-filter="robotics">Robotics</button><button class="filter" data-filter="materials">Materials & test</button><button class="filter" data-filter="research">Research & software</button></div>
+    <div class="filters filters--track reveal" aria-label="Filter projects by role type">
+      <span class="filters__label">Hiring for</span><button class="filter track-filter filter--active" data-track="all">Any role</button><button class="filter track-filter" data-track="mech">Mechanical / R&D</button><button class="filter track-filter" data-track="space">Space / robotics</button>
+    </div>
+    <p class="filter-empty" hidden>No projects match both filters. <button type="button" class="filter-reset">Show everything</button></p>
+    <div class="project-list">
+        <article class="project reveal" data-groups="robotics materials" data-tracks="mech space">
+          <div class="project__topline">
+            <span>01 / Six layers, three test regimes</span>
+            <span>Senior thesis · Princeton MAE</span>
+            <span>Sep 2025 – May 2026</span>
+          </div>
+          <div class="project__content">
+            <div class="project__copy">
+              <h3><a href="projects/marskin.html">MARSKIN</a></h3>
+              <p>Six layers of armour for a robot that has to keep folding.</p>
+              <ul><li>Soft robotics</li><li>Thermal test</li><li>Materials</li><li>Fabrication</li></ul>
+              <div class="project__result"><span>Outcome</span>26.5 °C ΔT against 4.6 °C for the best control</div>
+            </div>
+            <a class="project-visual" href="projects/marskin.html" aria-label="Read the MARSKIN case study">
+              <img src="assets/covers/marskin.jpg" alt="" loading="lazy">
+              <div class="visual-stamp">DESIGN<br>TEST<br>REPORT</div>
+            </a>
+          </div>
+        </article>
+        <article class="project reveal" data-groups="space" data-tracks="space">
+          <div class="project__topline">
+            <span>02 / Spacecraft command &amp; data handling</span>
+            <span>MAE 342 Space System Design</span>
+            <span>Spring 2026</span>
+          </div>
+          <div class="project__content">
+            <div class="project__copy">
+              <h3><a href="projects/lurex.html">LUREX</a></h3>
+              <p>Where does the data go when nobody's listening?</p>
+              <ul><li>Spacecraft systems</li><li>C&amp;DH</li><li>Operations</li><li>Requirements</li></ul>
+              <div class="project__result"><span>Outcome</span>Rebuilt the OBC budget from data rates up</div>
+            </div>
+            <a class="project-visual" href="projects/lurex.html" aria-label="Read the LUREX case study">
+              <img src="assets/covers/lurex.jpg" alt="" loading="lazy">
+              <div class="visual-stamp">DESIGN<br>TEST<br>REPORT</div>
+            </a>
+          </div>
+        </article>
+        <article class="project reveal" data-groups="robotics" data-tracks="mech space">
+          <div class="project__topline">
+            <span>03 / Sensing, sequencing, mechanism design</span>
+            <span>MAE 412 Microprocessors for Measurement &amp; Control</span>
+            <span>Spring 2025</span>
+          </div>
+          <div class="project__content">
+            <div class="project__copy">
+              <h3><a href="projects/railway.html">Automated railway</a></h3>
+              <p>A machine that unloads a train, sorts what it finds, and loads the next one.</p>
+              <ul><li>Mechatronics</li><li>Embedded</li><li>Sensing</li><li>3D printing</li></ul>
+              <div class="project__result"><span>Outcome</span>Stretch reloading goal achieved</div>
+            </div>
+            <a class="project-visual" href="projects/railway.html" aria-label="Read the Automated railway case study">
+              <img src="assets/covers/railway.jpg" alt="" loading="lazy">
+              <div class="visual-stamp">DESIGN<br>TEST<br>REPORT</div>
+            </a>
+          </div>
+        </article>
+        <article class="project reveal" data-groups="space" data-tracks="space">
+          <div class="project__topline">
+            <span>04 / Trajectory &amp; link analysis</span>
+            <span>MAE 341 Space Flight</span>
+            <span>Fall 2025</span>
+          </div>
+          <div class="project__content">
+            <div class="project__copy">
+              <h3><a href="projects/stk-mission-analysis.html">Cislunar mission analysis</a></h3>
+              <p>Model an Artemis downlink, then go outside and check the model.</p>
+              <ul><li>Orbital mechanics</li><li>Link budgets</li><li>STK</li><li>Measurement</li></ul>
+              <div class="project__result"><span>Outcome</span>166.65 h of contact across 18 windows</div>
+            </div>
+            <a class="project-visual" href="projects/stk-mission-analysis.html" aria-label="Read the Cislunar mission analysis case study">
+              <img src="assets/covers/stk-mission-analysis.jpg" alt="" loading="lazy">
+              <div class="visual-stamp">DESIGN<br>TEST<br>REPORT</div>
+            </a>
+          </div>
+        </article>
+        <article class="project reveal" data-groups="space" data-tracks="mech">
+          <div class="project__topline">
+            <span>05 / Propulsion architecture trade</span>
+            <span>MAE 426 Rocket &amp; Air-Breathing Propulsion</span>
+            <span>Spring 2025</span>
+          </div>
+          <div class="project__content">
+            <div class="project__copy">
+              <h3><a href="projects/hydrogen-aircraft.html">Hydrogen-electric hybrid aircraft</a></h3>
+              <p>Which combination of converters moves 210 people without the mass eating the benefit?</p>
+              <ul><li>Propulsion</li><li>Systems trade</li><li>Energy</li></ul>
+              <div class="project__result"><span>Outcome</span>53.5% peak system efficiency</div>
+            </div>
+            <a class="project-visual" href="projects/hydrogen-aircraft.html" aria-label="Read the Hydrogen-electric hybrid aircraft case study">
+              <img src="assets/covers/hydrogen-aircraft.jpg" alt="" loading="lazy">
+              <div class="visual-stamp">DESIGN<br>TEST<br>REPORT</div>
+            </a>
+          </div>
+        </article>
+        <article class="project reveal" data-groups="research" data-tracks="mech">
+          <div class="project__topline">
+            <span>06 / Computational design tool</span>
+            <span>ARC 374 Computational Thinking for Design</span>
+            <span>Spring 2026</span>
+          </div>
+          <div class="project__content">
+            <div class="project__copy">
+              <h3><a href="projects/kanthagen.html">KanthaGen</a></h3>
+              <p>A drawing tool that composes inside a tradition instead of approximating it.</p>
+              <ul><li>Computational design</li><li>JavaScript</li><li>SVG</li><li>Testing</li></ul>
+              <div class="project__result"><span>Outcome</span>52 tests · runs live in your browser</div>
+            </div>
+            <a class="project-visual" href="projects/kanthagen.html" aria-label="Read the KanthaGen case study">
+              <img src="assets/covers/kanthagen.jpg" alt="" loading="lazy">
+              <div class="visual-stamp">DESIGN<br>TEST<br>REPORT</div>
+            </a>
+          </div>
+        </article>
+        <article class="project reveal" data-groups="robotics materials" data-tracks="mech space">
+          <div class="project__topline">
+            <span>07 / Print it, then break it</span>
+            <span>CEE 374 Autonomous Fabrication &amp; Robotics</span>
+            <span>Fall 2025</span>
+          </div>
+          <div class="project__content">
+            <div class="project__copy">
+              <h3><a href="projects/robotic-am.html">Robotic additive manufacturing</a></h3>
+              <p>Print concrete in a helix, then break it on purpose.</p>
+              <ul><li>Robotics</li><li>Fabrication</li><li>Mechanical test</li><li>Materials</li></ul>
+              <div class="project__result"><span>Outcome</span>70% more energy absorbed per kg than cast</div>
+            </div>
+            <a class="project-visual" href="projects/robotic-am.html" aria-label="Read the Robotic additive manufacturing case study">
+              <img src="assets/covers/robotic-am.jpg" alt="" loading="lazy">
+              <div class="visual-stamp">DESIGN<br>TEST<br>REPORT</div>
+            </a>
+          </div>
+        </article>
+        <article class="project reveal" data-groups="materials research" data-tracks="mech space">
+          <div class="project__topline">
+            <span>08 / Low-temperature CO₂ conversion</span>
+            <span>ACEE Summer Research · Ju Lab, Princeton</span>
+            <span>Summer 2025</span>
+          </div>
+          <div class="project__content">
+            <div class="project__copy">
+              <h3><a href="projects/plasma-carbon.html">Plasma carbon conversion</a></h3>
+              <p>CO₂ to graphene at ~400 °C, if you can see what's happening.</p>
+              <ul><li>Plasma</li><li>Diagnostics</li><li>Energy research</li></ul>
+              <div class="project__result"><span>Outcome</span>2 optical diagnostics evaluated</div>
+            </div>
+            <a class="project-visual" href="projects/plasma-carbon.html" aria-label="Read the Plasma carbon conversion case study">
+              <svg class="project-visual__svg" viewBox="0 0 600 420" role="img" aria-label="Line diagram of a dielectric barrier discharge reactor">
+            <g class="diagram-grid"><path d="M0 70H600M0 140H600M0 210H600M0 280H600M0 350H600M100 0V420M200 0V420M300 0V420M400 0V420M500 0V420"/></g>
+            <g class="diagram-main">
+              <rect x="132" y="168" width="336" height="84" rx="8"/>
+              <path d="M132 192h336M132 228h336M72 210h60M468 210h60"/>
+              <circle cx="300" cy="104" r="27"/><path d="M286 104h28M300 90v28M300 131v37"/>
+              <path d="M168 252v46h264v-46"/>
+            </g>
+            <g class="diagram-accent"><path d="M160 210h280"/><path d="M424 199l20 11-20 11"/></g>
+            <text x="34" y="40">DBD REACTOR / CONCEPT</text>
+            <text x="392" y="396">CO₂ → CO + C</text>
+          </svg>
+              <div class="visual-stamp">DESIGN<br>TEST<br>REPORT</div>
+            </a>
+          </div>
+        </article>
+        <article class="project reveal" data-groups="research" data-tracks="mech space">
+          <div class="project__topline">
+            <span>09 / Field research &amp; analysis</span>
+            <span>Gender &amp; Research Intern · Youth Volunteer</span>
+            <span>Summers 2023 &amp; 2024</span>
+          </div>
+          <div class="project__content">
+            <div class="project__copy">
+              <h3><a href="projects/aegis.html">Aegis Trust</a></h3>
+              <p>Two summers of research and community work in Rwanda.</p>
+              <ul><li>Research</li><li>SPSS</li><li>Facilitation</li><li>Fieldwork</li></ul>
+              <div class="project__result"><span>Outcome</span>612-participant baseline · 3,753 stakeholders reached</div>
+            </div>
+            <a class="project-visual" href="projects/aegis.html" aria-label="Read the Aegis Trust case study">
+              <img src="assets/covers/aegis.jpg" alt="" loading="lazy">
+              <div class="visual-stamp">DESIGN<br>TEST<br>REPORT</div>
+            </a>
+          </div>
+        </article>
+    </div>
+  </section>
+
+  <section class="about-section" id="about">
+    <div class="about__statement reveal">
+      <span class="section-index">02 / About</span>
+      <p>The interesting part is when a prototype stops being a model and <em>starts producing numbers.</em></p>
+    </div>
+    <div class="about__details reveal">
+      <div class="about__portrait" aria-hidden="true">
+        <div class="portrait-line portrait-line--one"></div>
+        <div class="portrait-line portrait-line--two"></div>
+      </div>
+      <div class="about__bio">
+        <p>For my senior thesis I co-designed MARSKIN, a six-layer environmental skin for OSCAR, an origami crawler built for Mars-like conditions. I owned the layup, the onboard sensing, and the campaign that put it against two control stacks under heat, cold, cycling, dust, and abrasion.</p>
+        <p>Alongside that: spacecraft command &amp; data handling for a dual-orbiter lunar concept, robotic additive manufacturing on 6-DOF arms, embedded mechatronics, and plasma carbon conversion in Princeton's Combustion &amp; Low Carbon Energy Conversion Lab. Before all of it, two summers at Aegis Trust in Rwanda — where I learned that a finding nobody can act on isn't finished.</p>
+        <p>I grew up in Rwanda and speak seven languages. I write — I got my start filing articles for my secondary school's publication at Gashora, covering everything from national commemorations to campus life — and I've spent a season assistant stage managing at Princeton's Lewis Center, which is stranger training for spacecraft operations than it sounds: cues, sequencing, and eight people who all need the same timeline. Outside that I'm taking photographs, or reading about somewhere I'd like to go.</p>
+        <a class="button-link" href="assets/docs/Kellia_Gatete_Mechanical_RnD_Resume.pdf">Résumé — mechanical / R&amp;D <svg aria-hidden="true" class="arrow arrow--right" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M14 7l5 5-5 5" stroke="currentColor" stroke-width="1.7"/></svg></a>
+        <div class="about__links">
+          <a href="assets/docs/Kellia_Gatete_Space_Robotics_Resume.pdf">Résumé — space / robotics</a>
+          <a href="about.html">Full background</a><a href="https://github.com/kelliagatete">GitHub</a>
+        </div>
+      </div>
+      <div class="about__facts">
+          <div><span>Education</span><strong>Princeton University<br>B.S.E. MAE · Robotics minor</strong></div>
+          <div><span>Focus</span><strong>Planetary robotics<br>Thermal &amp; mechanical test</strong></div>
+          <div><span>Toolkit</span><strong>Fusion 360 · Rhino · Ansys STK<br>Python · MATLAB · C++</strong></div>
+          <div><span>Languages</span><strong>English · French · Kinyarwanda<br>Kirundi · Kiswahili · Spanish · German</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process-section">
+    <div class="process-heading reveal">
+      <span class="section-index">03 / How I work</span>
+      <h2>Build it properly.<br><em>Then try to break it.</em></h2>
+    </div>
+    <div class="process-steps reveal">
+      <div><span>01</span><h3>Frame</h3><p>Find the constraint that actually governs before solving the visible problem.</p></div>
+      <div><span>02</span><h3>Build</h3><p>Prototype early enough that reality still has time to change the design.</p></div>
+      <div><span>03</span><h3>Instrument</h3><p>Decide what to measure, and against which control, before the first run.</p></div>
+      <div><span>04</span><h3>Report</h3><p>Say what the data shows, including the conditions where the design loses.</p></div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="footer__top reveal">
+      <span class="section-index">04 / Contact</span>
+      <h2>Let's build something<br><em>worth testing.</em></h2>
+      <a class="contact-circle" href="mailto:kg5133@alumni.princeton.edu" aria-label="Send an email"><svg aria-hidden="true" class="arrow arrow--right" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M14 7l5 5-5 5" stroke="currentColor" stroke-width="1.7"/></svg></a>
+    </div>
+    <div class="footer__bottom">
+      <a href="mailto:kg5133@alumni.princeton.edu">kg5133@alumni.princeton.edu</a>
+      <div><a href="https://github.com/kelliagatete">GitHub</a></div>
+      <span>Kéllia Umuhuza Gatete · 2026</span>
+    </div>
+  </footer>
+</main>
+<script>
+(function () {
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var toggle = document.querySelector(".menu-toggle");
+  var nav = document.querySelector(".nav");
+  if (toggle && nav) {
+    toggle.addEventListener("click", function () {
+      var open = nav.classList.toggle("nav--open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    nav.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", function () {
+        nav.classList.remove("nav--open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
+  if ("IntersectionObserver" in window && !reduce) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add("is-visible"); io.unobserve(en.target); }
+      });
+    }, { rootMargin: "0px 0px -8% 0px" });
+    document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
+  } else {
+    document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("is-visible"); });
+  }
+
+  var buttons = document.querySelectorAll(".filter:not(.track-filter)");
+  var trackButtons = document.querySelectorAll(".track-filter");
+  var cards = document.querySelectorAll(".project");
+  var state = { group: "all", track: "all" };
+
+  function apply() {
+    var shown = 0;
+    cards.forEach(function (card) {
+      var inGroup = state.group === "all" || card.dataset.groups.split(" ").indexOf(state.group) !== -1;
+      var inTrack = state.track === "all" || (card.dataset.tracks || "").split(" ").indexOf(state.track) !== -1;
+      var show = inGroup && inTrack;
+      card.hidden = !show;
+      if (show) shown++;
+    });
+    var empty = document.querySelector(".filter-empty");
+    if (empty) empty.hidden = shown > 0;
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      buttons.forEach(function (b) { b.classList.remove("filter--active"); });
+      btn.classList.add("filter--active");
+      state.group = btn.dataset.filter;
+      apply();
+    });
+  });
+
+  trackButtons.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      trackButtons.forEach(function (b) { b.classList.remove("filter--active"); });
+      btn.classList.add("filter--active");
+      state.track = btn.dataset.track;
+      apply();
+    });
+  });
+  var reset = document.querySelector(".filter-reset");
+  if (reset) {
+    reset.addEventListener("click", function () {
+      state.group = "all";
+      state.track = "all";
+      buttons.forEach(function (b) { b.classList.toggle("filter--active", b.dataset.filter === "all"); });
+      trackButtons.forEach(function (b) { b.classList.toggle("filter--active", b.dataset.track === "all"); });
+      apply();
+    });
+  }
+})();
+</script>
+</body>
+</html>

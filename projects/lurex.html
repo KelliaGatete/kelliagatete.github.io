@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LUREX — Kéllia Umuhuza Gatete</title>
+  <meta name="description" content="A dual-orbiter lunar radiation mission. On C&amp;DH the governing question is unglamorous: the payload produces data continuously, the link to Earth exists only sometimes, and every processor, memory and bus number downstream is really an answer to that gap.">
+  <meta property="og:title" content="LUREX — Kéllia Umuhuza Gatete">
+  <meta property="og:description" content="A dual-orbiter lunar radiation mission. On C&amp;DH the governing question is unglamorous: the payload produces data continuously, the link to Earth exists only sometimes, and every processor, memory and bus number downstream is really an answer to that gap.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../home.css">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="rail" aria-hidden="true"><span class="rail__fill"></span></div>
+  <svg class="crease" viewBox="0 0 1200 14" preserveAspectRatio="none" aria-hidden="true">
+    <path class="crease__mtn" d="M0 10 L60 4 L120 10 L180 4 L240 10 L300 4 L360 10 L420 4 L480 10 L540 4 L600 10 L660 4 L720 10 L780 4 L840 10 L900 4 L960 10 L1020 4 L1080 10 L1140 4 L1200 10"/>
+    <path class="crease__val" d="M0 10 L1200 10"/>
+  </svg>
+  <header class="site-header">
+    <a class="wordmark" href="../index.html" aria-label="Home"><span>MAE</span><i></i> <span>ROB</span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-label="Toggle navigation"><span></span><span></span></button>
+    <nav class="nav" aria-label="Primary">
+      <a href="../index.html#work" aria-current="page">Work</a>
+      <a href="../about.html">About</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <a class="header-status" href="../index.html#contact"><span></span> Available for opportunities</a>
+  </header>
+  <main id="main">
+    <section class="project__head">
+      <div class="wrap">
+        <p class="eyebrow">MAE 342 Space System Design</p>
+        <h1 class="h-display project__title">LUREX</h1>
+        <p class="project__sub">Where does the data go when nobody's listening?</p>
+        <p class="project__metaline">
+          <span>Spring 2026</span>
+          <span>Spacecraft systems · C&amp;DH · Operations · Requirements</span>
+        </p>
+        <p class="marginalia">Team mission report, taken through Final Design Review. I sat on the Operations/Payload and CCD team and worked primarily on C&amp;DH. My contributions are named per-analysis below.</p>
+      </div>
+    </section>
+    <div class="wrap"><svg class="crease" viewBox="0 0 1200 14" preserveAspectRatio="none" aria-hidden="true">
+    <path class="crease__mtn" d="M0 10 L60 4 L120 10 L180 4 L240 10 L300 4 L360 10 L420 4 L480 10 L540 4 L600 10 L660 4 L720 10 L780 4 L840 10 L900 4 L960 10 L1020 4 L1080 10 L1140 4 L1200 10"/>
+    <path class="crease__val" d="M0 10 L1200 10"/>
+  </svg></div>
+
+    <section class="wrap project__body">
+      <div>
+        <p class="project__summary">A dual-orbiter lunar radiation mission. On C&amp;DH the governing question is unglamorous: the payload produces data continuously, the link to Earth exists only sometimes, and every processor, memory and bus number downstream is really an answer to that gap.</p>
+        <div class="block">
+          <h2 class="block__h">The problem</h2>
+          <div class="prose">
+            <p>LUREX flies two spacecraft — MiLO in an 8,000 km medium lunar orbit, LiLO in low lunar orbit — to monitor the radiation environment continuously for four years. Both carry direct-to-Earth links, with an S-band crosslink as backup relay when one is occulted.</p>
+            <p>A radiation payload does not stop producing data because Earth went behind the Moon. Across a year the mission loses 781 hours of Earth contact, and the worst single gap runs 71.3 minutes. Storage has to cover that gap. The processor has to keep up in the busiest mode rather than the average one. The buses have to carry payload, recorder and housekeeping traffic concurrently without contention.</p>
+            <p>I was on the Operations/Payload and CCD team — sixteen of us across eight subsystems, so the work ran wider than one box. Within CCD my primary responsibility was C&amp;DH: what happens to command, telemetry and science data once it is onboard. A teammate owned the communications link design. On the operations side I carried the risk matrix and the mission cost compliance analysis, both of which meant working across every other subsystem to get numbers that agreed.</p>
+          </div>
+        </div>
+        <div class="block">
+          <h2 class="block__h">What changed after PDR</h2>
+          <div class="prose">
+            <p>At PDR we sized the onboard computer with a percentage-based allocation — a single utilization figure per subsystem. The review feedback was that this was not substantiated, and it wasn't: nothing in it traced back to a data rate.</p>
+            <p>I replaced it with a throughput-driven budget. Supervisory data rates give KIPS by software function and operating mode; KIPS gives required clock speed; clock gives margin against hardware. RAM, recorder capacity and bus throughput were sized independently against the same rates, then integrated into a single closure table. Every number on this page traces back to a measured or specified rate rather than an assumed percentage.</p>
+            <p>The methodology follows SMAD's computer resource estimation approach, which sizes processors on throughput, execution frequency and memory demand rather than on one abstract utilization figure.</p>
+          </div>
+        </div>
+        <div class="block">
+          <h2 class="block__h">Sizing the processor</h2>
+          <div class="prose">
+            <p>The semi-centralized architecture matters here. The primary OBC handles supervisory traffic only — raw IMU and star tracker streams stay on local controllers and never reach it. That distinction is what makes the budget honest: at PDR the OBC was being charged for sensor data it never actually sees. Supervisory ingress is 412.5 kbps on MiLO and 20.75 kbps on LiLO.</p>
+            <p>I split the software into rate-driven and event-driven functions. Packetization, telemetry handling, recorder activity and comms framing scale with the data they move, so I sized them from the rates. cFS core services, routing logic and FDIR are triggered by events, so they got fixed engineering reserves.</p>
+            <p>Five modes were budgeted per spacecraft. MiLO relay governs at 3,572 KIPS, dominated by SSR/file management and comms support, because in relay the OBC is simultaneously running local payload management, concurrent recorder read/write, routing, and outbound framing. Converting at CPI = 4 per SMAD, the governing case needs 14.29 MHz against the Sirius QuadCore LEON4FT's 1,000 MHz aggregate.</p>
+          </div>
+          <p class="note">The subsystem budget still carries a much larger engineering allocation. That is a different quantity and deliberately so — it covers software overhead, cFS messaging, multicore contention, file-system complexity and future growth, none of which the KIPS model captures. The KIPS result proves the hardware closes; the allocation is how we manage risk on top of that.</p>
+        </div>
+        <div class="block">
+          <h2 class="block__h">Memory, recorder, buses</h2>
+          <div class="prose">
+            <p>RAM is a fixed software allocation plus a transient flow-through buffer. Fixed comes to 47 MiB — cFS/RTOS runtime and app code, command and telemetry queues, FDIR logs, SSR working cache, routing scheduler state. The buffer holds 10 seconds of peak relay traffic at 1.5× margin; on MiLO that is own data plus crosslink ingest plus DTE replay, 2,024.8 kbps in total. With a further 25% design margin: 63.5 MiB against 512 MiB available.</p>
+            <p>The recorder is sized on the worst blackout rather than the average one, with a combined coding-and-design margin of 1.69, a 71.30-minute critical interval, and a 2× allowance for a missed contact on top of the blackout. MiLO needs 1,040.7 MB of 32,000 MB. LiLO needs 332.6 MB.</p>
+            <p>SpaceWire was checked against peak payload, recorder and framing traffic; CAN against peak housekeeping and control. The binding SpaceWire case is concurrent recorder read/write during relay at roughly 2.0 Mbps against 300 Mbps per port. I budgeted the local controllers separately using the same KIPS logic, to confirm that pushing low-level processing off the OBC was real rather than bookkeeping — the ADCS controller governs there at 1,500 KIPS.</p>
+          </div>
+        </div>
+        <div class="block">
+          <h2 class="block__h">Closure</h2>
+          <div class="prose">
+            <p>The Sirius QuadCore LEON4FT and Sirius TCM close against every governing case: clock at 70×, RAM at 8.1×, recorder at 30.8× on MiLO and 96.2× on LiLO, SpaceWire above 150×, CAN at 80×.</p>
+            <p>Two trends hold across the whole analysis. MiLO governs C&amp;DH sizing on both spacecraft, and relay is the governing mode. The load concentrates in comms framing and SSR/file management, and among local controllers, in ADCS. The percentage distribution that appears in the final report is a summary of this work, not the method that produced it — which was the specific ambiguity flagged at PDR.</p>
+          </div>
+        </div>
+        <div class="block">
+          <h2 class="block__h">The operations side</h2>
+          <div class="prose">
+            <p>I owned the FDR risk matrix — coordinating with every subsystem on mitigation and documenting what moved since PDR. Near-real-time downlink dropped out of the red region after the medium orbit altitude went from 3,000 to 8,000 km and the architecture moved to dual direct-to-Earth with opportunistic crosslink. Data storage came off the primary risk list on the back of the recorder analysis above. Attitude control instruments and solar array and antenna failures were added, having not been broken out before — the IMU sits at higher likelihood than its neighbours because it is the one attitude component with no redundancy, which LRO heritage supports.</p>
+            <p>I also gathered cost estimates across all subsystems and built the mission cost compliance analysis against the $175M SMEX cap plus $5M launch services, and refined the operations requirements, constraints and drivers for FDR. All subsystems closed within allocation with reserve remaining.</p>
+            <p>Both of those jobs are really the same job: getting eight subsystems to hand you numbers that agree with each other. That turned out to be the part of the project I was best at, and it is not a thing you can do from inside one subsystem.</p>
+          </div>
+        </div>
+        <div class="block">
+          <h2 class="block__h">What I'd do differently</h2>
+          <div class="prose">
+            <p>The fixed reserves for cFS core, routing and FDIR are engineering allocations, not measurements. So are the 10-second buffer depth and the 1.5× factor on it. They are reasonable first-order numbers for FDR and the margins are large enough that being wrong by 2× changes nothing — but they are the weakest links in the chain, and I'd rather have profiled a real cFS build than reasoned about one.</p>
+            <p>The margins themselves are worth questioning. 70× on clock and 30× on the recorder are not signs of a well-tuned design; they are signs that the hardware was selected for radiation tolerance and heritage, and the computational demands of a supervisory OBC are simply small next to what a rad-hard quad-core provides. The useful conclusion is not that we have margin but that processing was never the binding constraint on this mission, and we should stop treating it as a design driver.</p>
+          </div>
+        </div>
+      </div>
+      <aside class="spec" aria-label="Project specifications">
+        <div class="spec__head">Spec</div>
+          <div class="spec__row" style="--i:0">
+            <div class="spec__k">Spacecraft</div>
+            <div class="spec__v">2 — MiLO, 8,000 km · LiLO, low lunar</div>
+          </div>
+          <div class="spec__row" style="--i:1">
+            <div class="spec__k">Mission life</div>
+            <div class="spec__v">4 years</div>
+          </div>
+          <div class="spec__row" style="--i:2">
+            <div class="spec__k">Supervisory ingress</div>
+            <div class="spec__v">412.5 / 20.75 kbps</div>
+          </div>
+          <div class="spec__row" style="--i:3">
+            <div class="spec__k">Governing case</div>
+            <div class="spec__v">MiLO relay mode</div>
+          </div>
+          <div class="spec__row" style="--i:4">
+            <div class="spec__k">Peak supervisory load</div>
+            <div class="spec__v">3,572 KIPS → 14.29 MHz</div>
+          </div>
+          <div class="spec__row" style="--i:5">
+            <div class="spec__k">Clock margin</div>
+            <div class="spec__v">70× against 1,000 MHz</div>
+          </div>
+          <div class="spec__row" style="--i:6">
+            <div class="spec__k">RAM</div>
+            <div class="spec__v">63.5 of 512 MiB — 12.4%</div>
+          </div>
+          <div class="spec__row" style="--i:7">
+            <div class="spec__k">Recorder</div>
+            <div class="spec__v">1,040.7 of 32,000 MB — 30.7×</div>
+          </div>
+          <div class="spec__row" style="--i:8">
+            <div class="spec__k">Worst blackout</div>
+            <div class="spec__v">71.3 min · 781 h/year total</div>
+          </div>
+          <div class="spec__row" style="--i:9">
+            <div class="spec__k">Bus</div>
+            <div class="spec__v">Dual SpaceWire + CAN 2.0b</div>
+          </div>
+          <div class="spec__row" style="--i:10">
+            <div class="spec__k">OBC</div>
+            <div class="spec__v">Sirius QuadCore LEON4FT + TCM</div>
+          </div>
+          <div class="spec__row" style="--i:11">
+            <div class="spec__k">Review gate</div>
+            <div class="spec__v">FDR</div>
+          </div>
+      </aside>
+    </section>
+
+    <section class="wrap media">
+      <p class="eyebrow">Documentation</p>
+      <div class="media__grid">
+          <figure class="reveal shot shot--0">
+            <div class="frame" data-media>
+              <img src="../assets/lurex/data-flow.jpg" alt="OBC routing: direct-to-Earth when visible, crosslink when occulted, recorder when neither." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/lurex/data-flow.jpg</code></p>
+            </div>
+            <figcaption>OBC routing: direct-to-Earth when visible, crosslink when occulted, recorder when neither.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--1">
+            <div class="frame" data-media>
+              <img src="../assets/lurex/cpu-budget.jpg" alt="Supervisory OBC load by software function and mode. Relay governs; framing and recorder management dominate it." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/lurex/cpu-budget.jpg</code></p>
+            </div>
+            <figcaption>Supervisory OBC load by software function and mode. Relay governs; framing and recorder management dominate it.</figcaption>
+          </figure>
+          <figure class="reveal shot shot--2">
+            <div class="frame" data-media>
+              <img src="../assets/lurex/comm-gaps.jpg" alt="Communication gap statistics. The 71.3-minute worst case is what sizes the recorder." loading="lazy">
+              <p class="frame__placeholder" data-fallback hidden>Drop file at<br><code>assets/lurex/comm-gaps.jpg</code></p>
+            </div>
+            <figcaption>Communication gap statistics. The 71.3-minute worst case is what sizes the recorder.</figcaption>
+          </figure>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <nav class="pager" aria-label="More projects">
+        <span><a href="marskin.html">← MARSKIN</a></span>
+        <span><a href="railway.html">Automated railway →</a></span>
+      </nav>
+    </div>
+
+  </main>
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <p class="footer__cta" id="contact">Currently looking for engineering roles.</p>
+        <div class="footer__links">
+          <a href="mailto:kg5133@alumni.princeton.edu">kg5133@alumni.princeton.edu</a>
+          <a href="tel:6093757945">(609) 375-7945</a>
+          <a href="../assets/docs/Kellia_Gatete_Mechanical_RnD_Resume.pdf">Résumé — mechanical / R&amp;D (PDF)</a>
+          <a href="../assets/docs/Kellia_Gatete_Space_Robotics_Resume.pdf">Résumé — space / robotics (PDF)</a>
+          <a href="https://github.com/kelliagatete" rel="me">GitHub</a>
+        </div>
+      </div>
+      <p class="colophon">Built and maintained by Kéllia Gatete · Princeton, NJ</p>
+    </div>
+  </footer>
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox__close" type="button" aria-label="Close">close</button>
+    <figure class="lightbox__stage"><img alt=""><figcaption></figcaption></figure>
+  </div>
+  <script src="../main.js"></script>
+</body>
+</html>
